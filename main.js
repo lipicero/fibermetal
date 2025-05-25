@@ -131,7 +131,7 @@ $(document).ready(function () {
   });
 
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 350) {
+    if ($(this).scrollTop() > 300) {
       $('#ir-arriba').slideDown(300);
     } else {
       $('#ir-arriba').slideUp(300);
