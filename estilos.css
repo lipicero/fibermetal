@@ -24,7 +24,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
-    transition: 0.6s;
+    transition: 0.3s;
     display: flex;
     line-height: 70px;
     z-index: 1;
@@ -43,7 +43,7 @@ header {
 header .nav {
     position: relative;
     line-height: 90px;
-    transition: 0.6s;
+    transition: 0.3s;
     transition-property: line-height;
 }
 
@@ -73,7 +73,7 @@ header .nav .menu {
 
 .menu-item>a:hover {
     color: rgb(103, 184, 231);
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 /* SUBMENU CONTACTO */
@@ -89,7 +89,7 @@ header .nav .menu {
     pointer-events: none;
     transform: translateY(0px);
     opacity: 0;
-    transition: 0.4s;
+    transition: 0.3s;
     transition-property: transform, opacity;
     box-shadow: 0px 5px 16px -4px rgba(0, 0, 0, 0.92);
 }
@@ -106,7 +106,7 @@ header.sticky .menu-item .sub-menu {
 
 .menu-item .sub-menu .sub-item {
     position: relative;
-    padding: 24px 17px;
+    padding: 24px 29px;
     cursor: pointer;
     box-shadow: inset 0px -30px 5px -30px rgba(12, 12, 12, 0.2);
     border-radius: 5px 5px;
@@ -142,7 +142,7 @@ header.sticky .menu-item .sub-menu {
         right: -100%;
         padding: 90px 0px;
         overflow-y: auto;
-        transition: 0.7s;
+        transition: 0.4s;
         transition-property: right, visibility;
         box-shadow: 00px 0px 15px 0px rgba(0, 0, 0, 0.75);
         cursor: default;
@@ -161,7 +161,7 @@ header.sticky .menu-item .sub-menu {
     }
 
     header .nav .menu.active .nav-overlay {
-        transition: 0.8s;
+        transition: 0.4s;
         transition-property: left, ;
         visibility: visible;
         opacity: 1;
@@ -169,7 +169,7 @@ header.sticky .menu-item .sub-menu {
     }
 
     header.sticky .nav {
-        line-height: 100px;
+        line-height: 90px;
     }
 
     header .nav .menu.active {
@@ -359,7 +359,8 @@ h2 {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 8px  rgba(0, 0, 0, 0.1);
+
 }
 
 .galeria-grid img:hover {

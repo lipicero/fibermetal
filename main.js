@@ -14,7 +14,7 @@ menuBtn.addEventListener("click", () => {
 
 aclick.addEventListener("click", () => menu.classList.remove("active"));
 liclick.addEventListener("click", () => menu.classList.remove("active"));
-liclick1.addEventListener("click", () => menu.classList.remove("active"));
+// liclick1.addEventListener("click", () => menu.classList.remove("active"));
 closeBtn.addEventListener("click", () => menu.classList.remove("active"));
 overlayNav.addEventListener("click", () => menu.classList.remove("active"));
 
@@ -23,10 +23,12 @@ $(document).ready(function () {
   $(".sub-btn").click(function () {
     $(this).next(".sub-menu").slideToggle();
   });
+});
 
-  $('.sub-item a').click(function () {
+$('.sub-item a').click(function () {
+  if (window.innerWidth <= 850) {
     $('.sub-menu').hide();
-  });
+  }
 });
 
 // Cerrar submenú al hacer clic fuera
@@ -34,13 +36,45 @@ $(document).on("click", function (e) {
   const $submenu = $(".sub-menu");
   const $subBtn = $(".sub-btn");
 
-  // Si el clic NO fue dentro del submenú ni del botón que lo activa
-  if (!$submenu.is(e.target) && $submenu.has(e.target).length === 0 &&
-      !$subBtn.is(e.target) && $subBtn.has(e.target).length === 0) {
-    $submenu.slideUp(); //
-  }
+  // Si el clic NO fue dentro del submenú ni del botón que lo activa solo para pantallas pequeñas
+  $(document).on("click", function (e) {
+    if (window.innerWidth <= 850) {
+      const $submenu = $(".sub-menu");
+      const $subBtn = $(".sub-btn");
+
+      if (
+        !$submenu.is(e.target) &&
+        $submenu.has(e.target).length === 0 &&
+        !$subBtn.is(e.target) &&
+        $subBtn.has(e.target).length === 0
+      ) {
+        $submenu.slideUp();
+      }
+    }
+  });
 });
 
+// Abrir app o web
+function abrirAppOweb(selector, linkApp, linkWeb) {
+  const enlace = document.querySelector(selector);
+  if (!enlace) return;
+
+  enlace.addEventListener('click', function (e) {
+    e.preventDefault();
+    const esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (esMovil) {
+      window.location.href = linkApp;
+      // Fallback: si no tiene la app, después de 1.5s lo manda al sitio web
+      setTimeout(() => window.open(linkWeb, '_blank'), 1500);
+    } else {
+      window.open(linkWeb, '_blank');
+    }
+  });
+}
+
+// Aplicar a los enlaces
+abrirAppOweb('.instagram-link', 'instagram://user?username=fiber.metal', 'https://www.instagram.com/fiber.metal');
+abrirAppOweb('.facebook-link', 'fb://page/FiberMetall', 'https://www.facebook.com/FiberMetall');
 
 // Efecto sticky del header al hacer scroll
 window.addEventListener("scroll", () => {
