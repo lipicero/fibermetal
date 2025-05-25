@@ -3,19 +3,22 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    transition: all 0.3s ease;
 }
 
 body {
     background-image: url("./img/background.png");
     background-color: ghostwhite;
-    padding: 90px 0px 0px;
+    padding-top: 90px;
     min-height: 100vh;
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
+    scroll-behavior: smooth;
 }
 
 header {
+    background-color: #263238;
+    color: white;
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.92);
     width: 100%;
     position: fixed;
@@ -23,11 +26,11 @@ header {
     left: 0;
     justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
+    padding: 0 30px;
     transition: 0.3s;
     display: flex;
     line-height: 70px;
-    z-index: 1;
+    z-index: 1000;
 }
 
 .logo {
@@ -65,27 +68,25 @@ header .nav .menu {
     color: white;
     font-size: 18px;
     text-decoration: none;
-    margin: 0px 0px;
-    padding: 0px 10px;
+    padding: 10px 15px;
     cursor: pointer;
     line-height: 60px;
 }
 
 .menu-item>a:hover {
-    color: rgb(103, 184, 231);
-    transition: 0.3s;
+    color: #4fc3f7;
 }
 
 /* SUBMENU CONTACTO */
 
 .menu-item .sub-menu {
     position: fixed;
-    background-color: #263238;
+    background-color: #37474f;
     top: 90px;
     line-height: 10px;
     list-style: none;
-    border-radius: 5px 5px 10px 10px;
-    box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     pointer-events: none;
     transform: translateY(0px);
     opacity: 0;
@@ -116,7 +117,7 @@ header.sticky .menu-item .sub-menu {
     color: white;
     font-size: 15px;
     text-decoration: none;
-    padding: 10px 10px;
+    padding: 20px 15px;
 }
 
 .menu-item .sub-menu .sub-item:hover {
@@ -283,6 +284,10 @@ main {
     font-family: 'Libre Baskerville';
 }
 
+#info {
+  line-height: 1.6;
+}
+
 h1 {
     margin-top: 10px;
     font-size: 35px;
@@ -356,7 +361,7 @@ h2 {
 .galeria-grid img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0px 10px 8px  rgba(0, 0, 0, 0.1);
@@ -377,7 +382,7 @@ h2 {
     width: 100vw;
     height: 100vh;
     max-height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -390,6 +395,7 @@ h2 {
     object-fit: contain;
     /* Para que no se deforme */
     display: block;
+    border-radius: 10px;
 }
 
 /* Botón para cerrar */
@@ -414,9 +420,9 @@ h2 {
 /* Formulario de contacto */
 .contacto {
     border-radius: 20px;
-    margin-top: 10px;
-    padding: 20px 20px;
-    background-color: #ccc;
+    margin-top: 30px;
+    padding: 30px ;
+    background-color:  #d1d4d6;
     text-align: center;
 }
 
@@ -443,7 +449,7 @@ h2 {
 .contacto input,
 .contacto textarea {
     padding: 12px;
-    border: 1px solid #000000;
+    border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1em;
     width: 100%;
@@ -452,8 +458,8 @@ h2 {
 }
 
 .contacto button {
-    background-color: rgb(67, 129, 165);
-    color: rgb(0, 0, 0);
+    background-color: #4fc3f7;
+    color: white;
     border: none;
     padding: 12px;
     border-radius: 6px;
@@ -463,13 +469,13 @@ h2 {
 }
 
 .contacto button:hover {
-    background-color: #0056b3;
+    background-color:#039be5;
 }
 /* Pie de pagina */
 footer {
     margin-top: 20px;
     width: 100%;
-
+    font-size: 16px;
 }
 /* Boton ir arriba */
 #ir-arriba {
@@ -478,14 +484,18 @@ footer {
     -webkit-border-radius: 10px 10px 10px 10px;
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 00px 0px 15px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     display: none;
     padding: 10px 15px 10px 15px;
-    background: rgb(76, 86, 97);
+    background: #37474f;
     font-size: 10px;
-    color: rgb(255, 255, 255);
+    color: white;
     cursor: pointer;
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
+
+/* a, button, input, textarea, .galeria-grid img {
+  transition: all 0.3s ease;
+} */

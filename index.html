@@ -9,16 +9,15 @@
   <title>FiberMetal</title>
 
   <!-- Fuentes -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Poppins&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="estilos.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="iconos/logo.svg" type="image/x-icon">
 </head>
 
@@ -27,20 +26,18 @@
   <header class="blue-grey darken-4">
     <a class="logo" href="">FiberMetal</a>
     <div class="nav">
-      <div class="menu-btn"></div>
+      <div class="menu-btn" aria-label="Abrir menú"></div>
       <ul class="menu">
-        <li class="close-btn"></li>
+        <li class="close-btn" aria-label="Cerrar menú"></li>
         <div class="nav-overlay"></div>
         <li class="menu-item center-align aclick"><a href="#">Inicio</a></li>
         <li class="menu-item center-align">
           <a class="sub-btn">Contactanos <i class="bi bi-chevron-down"></i></a>
           <ul class="sub-menu center-align">
-            <li class="sub-item liclick1"><a href="https://wa.me/+543772636000" target="_blank">WhatsApp</a></li>
-            <li class="sub-item liclick1 instagram-link"><a href="#" target="_blank">Instagram</a>
-            </li>
-            <li class="sub-item liclick1 facebook-link"><a href="#" target="_blank">Facebook</a>
-            </li>
-            <li class="sub-item liclick1"><a href="mailto:mauricioceroleni1@gmail.com">Correo</a></li>
+            <li class="sub-item liclick1 whatsapp-link"><a href="#" target="_blank">WhatsApp</a></li>
+            <li class="sub-item liclick1 instagram-link"><a href="#" target="_blank">Instagram</a></li>
+            <li class="sub-item liclick1 facebook-link"><a href="#" target="_blank">Facebook</a></li>
+            <li class="sub-item liclick1 mailto"><a href="#">Correo</a></li>
           </ul>
         </li>
         <li class="menu-item center-align liclick"><a href="#about">Acerca</a></li>
@@ -50,18 +47,16 @@
 
   <!-- Contenido principal -->
   <main class="container">
-    <h1 id="about" class="ancla titulos center">Quienes somos</h1>
-    <p id="info"><b>FIBER METAL</b> es una joven empresa, creada el 29 de junio del 2020 ¡Sí en plena pandemia!
-      Surge de la idea de trabajar, de manera individual, haciendo lo que más me gusta, tratando siempre de lograr la
-      mejor calidad y al mejor precio. Dedicada a la elaboración, a pedido, de muebles con la combinación de hierro y
-      madera, rejas, herrería en general, reparaciones en fibra de vidrio y ahora también realizamos trabajos de
-      zinguería.</p>
-    <blockquote id="block"><i>Mauricio Ceroleni</i></blockquote>
+    <h1 id="about" class="ancla titulos center" data-aos="fade-up">Quienes somos</h1>
+    <p id="info" data-aos="fade-up" data-aos-delay="100">
+      <b>FIBER METAL</b> es una joven empresa, creada el 29 de junio del 2020 ¡Sí en plena pandemia! Surge de la idea de trabajar, de manera individual, haciendo lo que más me gusta, tratando siempre de lograr la mejor calidad y al mejor precio. Dedicada a la elaboración, a pedido, de muebles con la combinación de hierro y madera, rejas, herrería en general, reparaciones en fibra de vidrio y ahora también realizamos trabajos de zinguería.
+    </p>
+    <blockquote id="block" data-aos="fade-up" data-aos-delay="200"><i>Mauricio Ceroleni</i></blockquote>
 
     <!-- Galería -->
     <section class="galeria">
-      <h2 class="titulos">Galería de trabajos</h2>
-      <div class="galeria-grid">
+      <h2 class="titulos" data-aos="fade-up">Galería de trabajos</h2>
+      <div class="galeria-grid" data-aos="zoom-in-up">
         <img src="img/img1.jpg" alt="Trabajo 1" onclick="abrirModal(this.src)">
         <img src="img/img2.jpg" alt="Trabajo 2" onclick="abrirModal(this.src)">
         <img src="img/img3.jpg" alt="Trabajo 3" onclick="abrirModal(this.src)">
@@ -79,18 +74,16 @@
 
     <!-- Dirección -->
     <hr id="linea1">
-    <h2 class="titulos">Dirección:</h2>
-    <div class="mapa">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.7395348168393!2d-56.6447798857826!3d-29.172346782207967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945461e42dd25c45%3A0xfb6a0eca2b1cfc48!2sFiberMetal!5e0!3m2!1ses-419!2sbr!4v1631678017478!5m2!1ses-419!2sbr"
-        width="950" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <h2 class="titulos" data-aos="fade-up">Dirección:</h2>
+    <div class="mapa" data-aos="fade-up" data-aos-delay="100">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.7395348168393!2d-56.6447798857826!3d-29.172346782207967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945461e42dd25c45%3A0xfb6a0eca2b1cfc48!2sFiberMetal!5e0!3m2!1ses-419!2sbr!4v1631678017478!5m2!1ses-419!2sbr" width="950" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
     <!-- Botón Ir Arriba -->
-    <span id="ir-arriba"><i class="bi bi-chevron-double-up" style="font-size: 20px;"></i></span>
+    <span id="ir-arriba" aria-label="Volver arriba"><i class="bi bi-chevron-double-up" style="font-size: 20px;"></i></span>
 
     <!-- Contacto -->
-    <section class="contacto">
+    <section class="contacto" data-aos="fade-up">
       <h2 class="titulos">Deja tu consulta:</h2>
       <form id="form-contacto" action="https://formspree.io/f/xanogqro" method="POST">
         <input type="text" name="nombre" placeholder="Su nombre" required>
@@ -125,13 +118,15 @@
       </div>
     </div>
     <div class="footer-copyright blue-grey darken-0">
-      <div class="container black-text" style="font-size: 16px;">&copy; 2022 Copyright</div>
+      <div class="container black-text">&copy; 2022 Copyright</div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
   <script src="main.js"></script>
 </body>
 

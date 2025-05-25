@@ -75,6 +75,8 @@ function abrirAppOweb(selector, linkApp, linkWeb) {
 // Aplicar a los enlaces
 abrirAppOweb('.instagram-link', 'instagram://user?username=fiber.metal', 'https://www.instagram.com/fiber.metal');
 abrirAppOweb('.facebook-link', 'fb://page/FiberMetall', 'https://www.facebook.com/FiberMetall');
+abrirAppOweb('.whatsapp-link', 'whatsapp://send?phone=543772636000&text=Hola, estoy interesado en Fiber Metal', 'https://api.whatsapp.com/send?phone=543772636000&text=Hola,%20estoy%20interesado%20en%20Fiber%20Metal');
+abrirAppOweb('.mailto', 'mailto:mauricioceroleni1@gmail.com','mailto:mauricioceroleni1@gmail.com');
 
 // Efecto sticky del header al hacer scroll
 window.addEventListener("scroll", () => {
