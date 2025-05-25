@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url("./imagenes/background.png");
+    background-image: url("./img/background.png");
     background-color: ghostwhite;
     padding: 90px 0px 0px;
     min-height: 100vh;
@@ -30,7 +30,7 @@ header {
     z-index: 1;
 }
 
-header .logo {
+.logo {
     color: white;
     font-size: 40px;
     font-weight: 70px;
@@ -42,13 +42,13 @@ header .logo {
 
 header .nav {
     position: relative;
-    line-height: 80px;
+    line-height: 90px;
     transition: 0.6s;
     transition-property: line-height;
 }
 
 header.sticky .nav {
-    line-height: 90px;
+    line-height: 70px;
 
 }
 
@@ -81,21 +81,21 @@ header .nav .menu {
 .menu-item .sub-menu {
     position: fixed;
     background-color: #263238;
-    top: 80px;
-    line-height: 20px;
+    top: 90px;
+    line-height: 10px;
     list-style: none;
     border-radius: 5px 5px 10px 10px;
     box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
     pointer-events: none;
     transform: translateY(0px);
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.4s;
     transition-property: transform, opacity;
     box-shadow: 0px 5px 16px -4px rgba(0, 0, 0, 0.92);
 }
 
 header.sticky .menu-item .sub-menu {
-    top: 90px;
+    top: 70px;
 }
 
 .menu-item:hover .sub-menu {
@@ -120,7 +120,7 @@ header.sticky .menu-item .sub-menu {
 }
 
 .menu-item .sub-menu .sub-item:hover {
-    background-color: rgb(103, 184, 231);
+    background-color: rgb(67, 129, 165);
 }
 
 .menu-item .sub-menu .sub-item:last-child:hover {
@@ -143,11 +143,11 @@ header.sticky .menu-item .sub-menu {
         padding: 90px 0px;
         overflow-y: auto;
         transition: 0.7s;
-        transition-property: right,visibility;
+        transition-property: right, visibility;
         box-shadow: 00px 0px 15px 0px rgba(0, 0, 0, 0.75);
         cursor: default;
     }
-    
+
     .nav-overlay {
         position: fixed;
         top: 0;
@@ -159,7 +159,8 @@ header.sticky .menu-item .sub-menu {
         visibility: hidden;
         opacity: 0;
     }
-    header .nav .menu.active .nav-overlay{
+
+    header .nav .menu.active .nav-overlay {
         transition: 0.8s;
         transition-property: left, ;
         visibility: visible;
@@ -196,9 +197,9 @@ header.sticky .menu-item .sub-menu {
         overflow: hidden;
         width: 140px;
         display: none;
-        margin-left:30px;
+        margin-left: 30px;
     }
-    
+
     header.sticky .menu-item .sub-menu {
         top: 10px;
     }
@@ -207,7 +208,7 @@ header.sticky .menu-item .sub-menu {
     .menu-item:hover .sub-menu {
         transform: translateX(0px);
     }
-    
+
     .menu-item .sub-menu .sub-item {
         /* box-shadow: none; */
         padding: 20px 0px;
@@ -235,7 +236,7 @@ header.sticky .menu-item .sub-menu {
         cursor: pointer;
         /* display: block; */
     }
-    
+
     .menu-btn {
         background: url(iconos/menu.png) no-repeat;
         width: 40px;
@@ -245,9 +246,9 @@ header.sticky .menu-item .sub-menu {
         cursor: pointer;
         display: block;
     }
-   
 
-    
+
+
     header {
         padding: 6px 25px;
     }
@@ -269,7 +270,7 @@ main {
     visibility: hidden;
 }
 
-.carousel {
+/* .carousel {
     margin: 0px;
     height: 450px;
 }
@@ -278,11 +279,14 @@ main {
     height: 400px;
     width: 300px;
     margin: 25px 0px;
+} */
+
+.titulos {
+    font-family: 'Libre Baskerville';
 }
 
-
 h1 {
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 35px;
     margin-bottom: 0;
 }
@@ -320,6 +324,7 @@ h2 {
     position: relative;
     height: 0px;
     margin-top: 20px;
+    z-index: auto;
 }
 
 .mapa iframe {
@@ -352,4 +357,134 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+.galeria {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.galeria h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* Modal */
+/* Estilo del contenedor del modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen dentro del modal a pantalla completa */
+.modal-contenido {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    /* Para que no se deforme */
+    display: block;
+}
+
+/* Botón para cerrar */
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.modal-contenido {
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-contenido {
+    transform: scale(1.0);
+}
+
+.contacto {
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 20px 20px;
+    background-color: #ccc;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.contacto form {
+    color: #000000;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contacto ::placeholder {
+    color: #000000;
+    opacity: 0.7;
+    /* Opacidad del placeholder */
+}
+
+.contacto input,
+.contacto textarea {
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+    resize: vertical;
+    color: #000000;
+}
+
+.contacto button {
+    background-color: rgb(67, 129, 165);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contacto button:hover {
+    background-color: #0056b3;
 }

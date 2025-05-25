@@ -57,19 +57,64 @@ window.addEventListener("scroll", function () {
 });
 
 // carrusel
-document.addEventListener('DOMContentLoaded', function () {
-    var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, {
-        dist: -150,
+  function abrirModal(src) {
+    $('#imagenGrande').attr('src', src);
+    $('#modal').fadeIn();
+  }
+
+  function cerrarModal() {
+    $('#modal').fadeOut();
+  }
+
+  // Cerrar modal al presionar Escape
+  $(document).on('keydown', function(e) {
+    if (e.key === "Escape") {
+      cerrarModal();
+    }
+  });
+
+  // Cerrar modal si se hace clic fuera de la imagen
+function abrirModal(src) {
+  $('#imagenGrande').attr('src', src);
+  $('#modal').fadeIn().addClass('show');
+}
+
+function cerrarModal() {
+  $('#modal').fadeOut().removeClass('show');
+}
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     var elems = document.querySelectorAll('.carousel');
+//     var instances = M.Carousel.init(elems, {
+//         dist: -150,
+//     });
+// });
+
+
+// //   autoplay carrusel
+// setInterval(function () {
+//     $('.carousel').carousel('next');
+// }, 3000);
+$('#form-contacto').on('submit', function (e) {
+    e.preventDefault(); // Prevenir redirección
+
+    const $form = $(this);
+    const url = $form.attr('action');
+
+    $.ajax({
+      type: 'POST',
+      url: url,
+      data: $form.serialize(),
+      dataType: 'json',
+      success: function () {
+        $('#form-mensaje').fadeIn().delay(3000).fadeOut();
+        $form.trigger('reset');
+      },
+      error: function () {
+        alert('Ocurrió un error al enviar el mensaje. Intentalo más tarde.');
+      }
     });
-});
-
-
-//   autoplay carrusel
-setInterval(function () {
-    $('.carousel').carousel('next');
-}, 3000);
-
+  });
 
 // boton ir arriba flotante
 $(document).ready(function () {
